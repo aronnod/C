@@ -1,0 +1,42 @@
+// Finds all the multiples of a number until a certain point
+
+#include <stdio.h>
+#include <math.h>
+int
+main () {
+
+double x, y, d;
+printf("Input starting number: ");
+scanf("%lf", &x);
+printf("Input last number: ");
+scanf("%lf", &y);
+printf("Input Dividor: ");
+scanf("%lf", &d);
+
+if (x>=y) {
+	printf("Invalid... Terminating");
+	return 0; 
+}
+
+while (x <= y) {
+if (fmod(x,d) == 0) {
+printf("%.3lf ", x);
+x++;
+}
+else {
+x++;
+}
+}
+
+
+return (0);
+}
+
+
+
+
+
+
+
+
+
