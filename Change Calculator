@@ -1,0 +1,55 @@
+//Calculates change given an amount in dollars or cents
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int t, l, q, d, n, cent, menu;
+    double dollars;
+    
+    printf("This calculator will display the amount of change in coins, prioritizing larger value coins first.\nPlease select an option below\n");
+    printf("1. Input in dollars\n");
+    printf("2. Input in cents\n");
+    printf("3. Exit Program\n");
+    scanf("%d",&menu);
+    
+    if (menu == 1) {
+        printf("Please input the amount in dollars\n");
+        scanf("%lf", &dollars);
+        cent = dollars * 100;
+        
+    }
+    else if (menu == 2) {
+        printf("Please input the amount in cents");
+        scanf("%d", &cent);
+    }
+    else {
+        printf("Terminating Program");
+        return(1);
+    }
+
+    t = round(cent/200);
+    cent = cent % 200;
+        printf ("t = %d\n", t);
+        
+    l = round(cent/100);
+    cent = cent % 100;
+    printf ("l = %d\n", l);
+        
+    q = round(cent/25);
+    cent = cent % 25;
+    printf ("q = %d\n", q);
+    
+    d = round(cent/10);
+    cent = cent % 10;
+    printf ("d = %d\n", d);
+    
+    n = round(cent/5);
+    cent = cent % 5;
+    printf ("n = %d\n", n);
+        
+    
+    
+    return 0;
+}
