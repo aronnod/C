@@ -1,0 +1,38 @@
+//Code Calculates the Collatz Conjecture Given an Integer. Challenge on edabit (https://edabit.com/challenge/F6m5ZRyzK5fmqTrBG)
+
+#include<stdio.h>
+#include<math.h>
+
+int call (int number, int i) {
+	int tester = number%2;
+	if (number == 1) {
+	printf("%d; \t\tIt took %d times to reach 1\n", number, i);
+	return(number);
+}
+	if (tester==0) {
+		number = number / 2;
+		i++;
+		printf("%d; \t\t%d times\n", number, i);
+		call(number, i);
+	}
+	else if (tester!=0) {
+		number = number * 3 + 1;
+		i++;
+		printf("%d; \t\t%d times\n", number, i);
+		call(number, i);
+	}
+	return (number);
+}
+
+int main()
+{
+
+int num;
+int x = 0;
+printf("Please input a number (int)\n");
+scanf("%d", &num);
+call(num, x);
+printf("Terminating");
+
+return(0);
+}
