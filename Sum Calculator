@@ -1,0 +1,31 @@
+// sum the numbers inputed until -99 is entered
+
+#include <stdio.h>
+
+int main () {
+
+double number;
+double summation;
+summation = 0;
+number = 0;
+
+printf("This calculator will take inputed values and add them up. Enter '-99' to stop.\nPlease enter the first number\n");
+scanf("%lf", &number);
+
+while (1) {
+if (number != -99) {
+summation += number;
+printf ("%.2lf\n", summation);
+printf("Input the next number: \n");
+scanf("%lf", &number);
+}
+else {
+printf("Terminating...");
+break;
+}
+}
+
+return (0);
+
+}
+
